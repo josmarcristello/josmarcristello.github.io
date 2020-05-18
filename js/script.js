@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     var typed = new Typed(".typed",
         {
-            strings:["Bathroom Engineer.", "Farmer.", "Whale Hunter."],
+            strings:["Bathroom Engineer.", "Farmer.", "Whale Hunter.", "Pyramid Explorer."],
             typeSpeed: 70,
             loop: true,
             startDelay: 1000,
