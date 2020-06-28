@@ -6,6 +6,9 @@ Object.defineProperties(Array.prototype, {
     }
 });
 
+
+var easter_egg = new Konami(cheat);
+
 init();
 
 function init(){
@@ -50,7 +53,7 @@ function new_game() {
     }
     
     //Generating a random index from 0 to numButtons inclusive and assigning it to challengeColor.
-    var randomIndex=Math.floor(Math.random()*colorButtonArray.length);
+    window.randomIndex=Math.floor(Math.random()*colorButtonArray.length);
     window.challengeColor=colorButtonArray[randomIndex].style.backgroundColor;
 
     //Updating header to have the color the player is supposed to look for.
@@ -362,4 +365,29 @@ function toggle_advice(){
             })
         }
     })
+}
+
+function cheat(){
+
+    Swal.fire({
+        title: 'You Dirty Cheater!',
+        text: "Good job finding this, tho.",
+        cancelButtonText: "Thx.",
+        showCancelButton: true,
+        showConfirmButton: false,
+    }).then((result) => {
+        if (!result.value){
+            document.querySelector("#statisticsPanel").classList.remove("hidden");
+            document.querySelector("h1").innerHTML='<h1>The Great <span class="block font-semibold text-5xl leading-10">RGB(100, 100, 100)</span> <span class="text-red-700">Cheating</span> Game</h1>'
+        
+            setInterval(function(){
+                colorButtonArray[randomIndex].click();
+            }, 400)
+        
+            setInterval(function(){
+                newGameButton.click();
+            }, 500)      
+        }
+    })
+
 }
