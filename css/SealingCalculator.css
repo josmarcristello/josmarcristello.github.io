@@ -1,11 +1,15 @@
+
 input:invalid{
-    /*
-    border-bottom: 2px dotted #F64C72;
-    */
+          
     box-shadow: none;
     background-color:rgb(226,232,240) !important;
 }
 
+input{
+    /*border: 1px solid black !important;*/
+    width: 130px !important;
+}
+  
 /*************************
 Back to top button
 *************************/
@@ -186,23 +190,19 @@ Link : https://codepen.io/350d/pen/YEPBEW
   .select2-container--flat .select2-selection--single .select2-selection__arrow b {
       /*Custom - Overriding arrow icon*/
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    -webkit-appearance: none;
+    -webkit-appearance: none; 
     -moz-appearance: none;
     appearance: none;
     -webkit-print-color-adjust: exact;
     /*color-adjust: exact;*/
     background-repeat: no-repeat;
-    
-    background-position: center;
+    background-position: right 0 center;
     background-color: transparent;
     background-size: contain;
-    
     border: none !important;
     height: 100% !important;
-    width: 20px !important;
-    margin: auto !important;
+    width: 22px !important;
     top: auto !important;
-    left: auto !important;
   }
 
   .select2-container .select2-choice .select2-arrow {
@@ -298,11 +298,12 @@ Link : https://codepen.io/350d/pen/YEPBEW
     /*line-height: 1.5;*/
   }
   .select2-container--flat .select2-selection--single .select2-selection__arrow {
+    
     height: 26px;
     position: absolute;
-    top: 1px;
-    right: 1px;
-    width: 20px;
+    top: 2px;
+    right: 6px;
+    width: 0px;
   }
   .select2-container--flat .select2-selection--single .select2-selection__arrow b {
     /*Selection Arrow Styling*/
