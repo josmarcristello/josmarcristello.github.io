@@ -291,6 +291,7 @@ Link : https://codepen.io/350d/pen/YEPBEW
     background: transparent;
     border: 0px;
     height: 100%;
+    width: 170px;
   }
   .select2-container--flat .select2-selection--single .select2-selection__rendered {
     /*Text on the closed dropdown front style*/
