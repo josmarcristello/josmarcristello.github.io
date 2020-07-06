@@ -378,7 +378,7 @@ function cheat(){
     }).then((result) => {
         if (!result.value){
             document.querySelector("#statisticsPanel").classList.remove("hidden");
-            document.querySelector("h1").innerHTML='<h1>The Great <span class="block font-semibold text-5xl leading-10">RGB(100, 100, 100)</span> <span style="color: rgb(197,48,48)">Cheating</span> Game</h1>'
+            document.querySelector("h1").innerHTML='<h1>The Great <span class="block font-semibold text-5xl leading-10">RGB(100, 100, 100)</span> <span class="text-red-700">Cheating</span> Game</h1>'
         
             setInterval(function(){
                 colorButtonArray[randomIndex].click();
