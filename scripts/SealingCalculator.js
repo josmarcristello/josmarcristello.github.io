@@ -1,3 +1,7 @@
+//TODO: Add a way to look into data tables (the function is done)
+//TODO: Fix bolt list yield stress. I'm pretty sure its wrong, but i'm used the same we always used.
+//TODO: Add a decent-looking footer
+
 //buttons
 resetButton=document.querySelector("#resetButton");
 loadButton=document.querySelector("#loadButton");
@@ -112,11 +116,26 @@ function loadTableData(){
     window.maxBoltSize=4;//in //this limitation is due to root area
     window.BOLT_GRADE_GROUP = [
         {id: '-1',text: 'Select Bolt Grade',},
-        {id: 'ASTM A193 B7',text: 'ASTM A193 B7', yieldStressRangeIN: ["<=2.5","<=4","<=7"], yieldStressValueKSI: [105, 95, 75]},
-        {id: 'ASTM A193 B7M',text: 'ASTM A193 B7M',},
-        {id: 'ASTM A193 B8',text: 'ASTM A193 B8',},
-        {id: 'ASTM A193 B8M',text: 'ASTM A193 BM',},
-        {id: 'ASTM A153 651A',text: 'ASTM A153 651A',},
+        {id: 'ASTM A193 B4B',text: 'ASTM A193 B4B', yieldStressRangeIN: ["<=4"], yieldStressValueKSI: [105]},
+        {id: 'ASTM A193 B4C',text: 'ASTM A193 B4C', yieldStressRangeIN: ["<=4"], yieldStressValueKSI: [85]},
+        {id: 'ASTM A193 B5',text: 'ASTM A193 B5', yieldStressRangeIN: ["<=4"], yieldStressValueKSI: [100]},
+        {id: 'ASTM A193 B6',text: 'ASTM A193 B6', yieldStressRangeIN: ["<=4"], yieldStressValueKSI: [85]},
+        {id: 'ASTM A193 B7',text: 'ASTM A193 B7', yieldStressRangeIN: ["<=2.5","<=4"], yieldStressValueKSI: [105, 95]},
+        {id: 'ASTM A193 B7M',text: 'ASTM A193 B7M', yieldStressRangeIN: ["<=4"], yieldStressValueKSI: [80]},
+        {id: 'ASTM A193 B8 Cl 1',text: 'ASTM A193 B8 Cl 1', yieldStressRangeIN: ["<=4"], yieldStressValueKSI: [30]},
+        {id: 'ASTM A193 B8 Cl 2',text: 'ASTM A193 B8 Cl 2', yieldStressRangeIN: ["<=0.75","<=1.0","<=1.25","<=4.0"], yieldStressValueKSI: [100, 80, 65, 50]},
+        {id: 'ASTM A193 B8C Cl 1',text: 'ASTM A193 B8C Cl 1', yieldStressRangeIN: ["<=4.0"], yieldStressValueKSI: [30]},
+        {id: 'ASTM A193 B8C Cl 2',text: 'ASTM A193 B8C Cl 2', yieldStressRangeIN: ["<=0.75","<=1.0","<=1.25","<=4.0"], yieldStressValueKSI: [100, 80, 65, 50]},
+        {id: 'ASTM A193 B8F',text: 'ASTM A193 B8F', yieldStressRangeIN: ["<=4.0"], yieldStressValueKSI: [30]},
+        {id: 'ASTM A193 B8M Cl 1',text: 'ASTM A193 B8M Cl 1', yieldStressRangeIN: ["<=4.0"], yieldStressValueKSI: [30]},
+        {id: 'ASTM A193 B8M Cl 2',text: 'ASTM A193 B8M Cl 2', yieldStressRangeIN: ["<=0.75","<=1.25","<=1.50","<=4.0"], yieldStressValueKSI: [95, 65, 50, 80]},
+        {id: 'ASTM A193 B8T Cl 1',text: 'ASTM A193 B8T Cl 1', yieldStressRangeIN: ["<=4.0"], yieldStressValueKSI: [30]},
+        {id: 'ASTM A193 B8T Cl 2',text: 'ASTM A193 B8T Cl 2', yieldStressRangeIN: ["<=0.75","<=1.25","<=1.50","<=4.0"], yieldStressValueKSI: [95, 65, 50, 80]},
+        {id: 'ASTM A193 B16',text: 'ASTM A193 B16', yieldStressRangeIN: ["<=2.5","<=4"], yieldStressValueKSI: [105, 95]},
+        {id: 'ASTM A453 651A',text: 'ASTM A453 651A', yieldStressRangeIN: ["<=2.75","<=4"], yieldStressValueKSI: [60, 70]},
+        {id: 'ASTM A453 651B',text: 'ASTM A453 651B', yieldStressRangeIN: ["<=2.75","<=4"], yieldStressValueKSI: [50, 60]},
+        {id: 'ASTM A453 660A',text: 'ASTM A453 660A', yieldStressRangeIN: ["<=4"], yieldStressValueKSI: [85]},
+        {id: 'ASTM A453 660B',text: 'ASTM A453 660B', yieldStressRangeIN: ["<=4"], yieldStressValueKSI: [85]},
     ];
     window.BOLT_ROOT_GROUP = {
         rootAreaRangeIN: ["<=1/4", "<=5/16", "<=3/8", "<=7/16", "<=1/2","<=9/16","<=5/8","<=3/4","<=7/8","<=1", "<=1.125", "<=1.25", "<=1.375", "<=1.5", "<=1.625", "<=1.75", "<=1.875", "<=2.0", "<=2.25", "<=2.5", "<=2.75", "<=3.0", "<=3.25", "<=3.50", "<=3.75", "<=4.0"],
@@ -643,7 +662,7 @@ async function userLogin(){
         }
       })
       
-    if (password=="stepbro") {  
+    if (password=="nimda") {  
         if (document.querySelectorAll(".admin-toggle.hidden").length > 0){
             Toast.fire({icon: 'success', title: 'Logged in as admin.'})
         } else {
