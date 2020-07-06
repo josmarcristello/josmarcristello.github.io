@@ -100,12 +100,12 @@
 <!--Calculator start-->
 <section id="calculatorWrapper" class="my-6 mx-4 xl:mx-0 flex justify-center flex-col xl:flex-row">
   
-  <section id="userParameters leftPanel" class="w-full xl:w-1/4 bg-gray-100 px-3 pb-2 mb-6 xl:mb-0 rounded-lg" style="max-width: 420px;">
+  <section id="userParameters leftPanel" class="w-full xl:w-1/4 bg-gray-100 mx-auto xl:mx-0 px-3 pb-2 mb-6 xl:mb-0 rounded-lg" style="max-width: 420px;">
     <h1 class="text-center text-2xl font-semibold leading-tight">Valve Data</h1>
     
     <div class="flex whitespace-no-wrap border-b border-gray-300 items-baseline mt-4">
       <span class="text-gray-500">Stem Diameter</span>
-      <input id="stemDiameter" class="w-5/12 ml-auto py-1 my-1 text-right bg-transparent text-gray-900 leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" pattern="[0-9]*\.*\/*[0-9]*" type="text" placeholder="" tabindex="1" autofocus>
+      <input id="stemDiameter" class="w-5/12 ml-auto py-1 my-1 text-right bg-transparent text-gray-900 leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" pattern="[0-9]*\.*\/*[0-9]*" type="text" placeholder="" tabindex="1" autofocus required>
       <select id="stemDiameterUnits" class=" form-select pl-1 pr-4 bg-transparent text-gray-500 sm:text-sm sm:leading-5 focus:outline-none">
         <option>mm</option>
         <option>in</option>
@@ -114,7 +114,7 @@
 
     <div class="flex whitespace-no-wrap border-b border-gray-300 items-baseline">
       <div class="text-gray-500">Packing Size</div>
-      <input id="packingSize" class="w-5/12 ml-auto py-1 my-1 text-right bg-transparent text-gray-900 leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*\.*\/*[0-9]*" placeholder="" tabindex="2">
+      <input id="packingSize" class="w-5/12 ml-auto py-1 my-1 text-right bg-transparent text-gray-900 leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*\.*\/*[0-9]*" placeholder="" tabindex="2" required>
       <select id="packingSizeUnits" class="form-select pl-1 pr-4 bg-transparent text-gray-500 sm:text-sm sm:leading-5 focus:outline-none">
         <option>mm</option>
         <option>in</option>
@@ -124,19 +124,19 @@
 
     <div class="hidden admin-toggle flex whitespace-no-wrap border-b border-gray-300 items-baseline">
       <span class="text-gray-500">Number of Rings</span>
-      <input id="numberRings" class="w-5/12 ml-auto pr-4 py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*." placeholder="" aria-label="Stem Diameter" tabindex="3">
+      <input id="numberRings" class="w-5/12 ml-auto pr-4 py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*." placeholder="" aria-label="Stem Diameter" tabindex="3" required>
       <h1 class="text-gray-500 text-sm text-right mr-1"style="width: 32px;">rings</h1>
     </div>
 
     <div class="flex whitespace-no-wrap border-b border-gray-300 items-baseline">
       <span class="text-gray-500">Number of Bolts</span>
-      <input id="numberBolts" class="w-5/12 ml-auto pr-4 py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*." placeholder="" aria-label="Stem Diameter" tabindex="3">
+      <input id="numberBolts" class="w-5/12 ml-auto pr-4 py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*." placeholder="" aria-label="Stem Diameter" tabindex="3" required>
       <h1 class="text-gray-500 text-sm text-right mr-1"style="width: 32px;">bolts</h1>
     </div>
     
     <div class="flex whitespace-no-wrap border-b border-gray-300 items-baseline">
       <span class="text-gray-500 flex">Media Pressure</span>
-      <input id="mediaPressure" class="w-5/12 ml-auto py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*\.*\/*[0-9]*"  placeholder="" tabindex="5">
+      <input id="mediaPressure" class="w-5/12 ml-auto py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*\.*\/*[0-9]*"  placeholder="" tabindex="5" required>
       <select id="mediaPressureUnits" class="form-select pl-1 pr-4 bg-transparent text-gray-500 sm:text-sm sm:leading-5 focus:outline-none">
         <option>bar</option>
         <option>psi</option>
@@ -147,7 +147,7 @@
 
     <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline">
       <span class="text-gray-500">Bolt Diameter</span>
-      <input id="boltDiameter" class="w-5/12 ml-auto py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" pattern="[0-9]*\.*\/*[0-9]*" type="text" placeholder="" tabindex="6">
+      <input id="boltDiameter" class="w-5/12 ml-auto py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" pattern="[0-9]*\.*\/*[0-9]*" type="text" placeholder="" tabindex="6" required>
       <select id="boltDiameterUnits" class="form-select pl-1 pr-4 bg-transparent text-gray-500 sm:text-sm sm:leading-5 focus:outline-none">
         <option>in</option>
         <option>mm</option>
@@ -161,17 +161,17 @@
     </div>
 
     <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline">
-      <span class="text-gray-500 flex">"k" Factor</span>
-      <input id="kFactor" class="inline-block ml-auto py-1 my-1 mr-3 text-right appearance-none bg-transparent border-none w-auto text-gray-900 px-2 leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" pattern="[0-9]*\.*\/*[0-9]*" type="text" placeholder="" tabindex="8">
+      <span class="text-gray-500 w-1/2 py-2">"k" Factor</span>
+      <input id="kFactor" class="w-1/2 ml-auto py-1 my-1 mr-3 text-right appearance-none bg-transparent border-none text-gray-900 px-2 leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" pattern="[0-9]*\.*\/*[0-9]*" type="text" placeholder="" tabindex="8" required>
     </div>
  
   </section>
 
 
-  <section id="middlePanel" class="xl:ml-1 mb-6 xl:mb-0 w-full xl:w-48pct bg-gray-100 rounded-lg" style="max-width: 820px;">
+  <section id="middlePanel" class="mx-auto xl:mx-0 xl:ml-1 mb-6 xl:mb-0 w-full xl:w-48pct bg-gray-100 rounded-lg" style="max-width: 820px;">
     <h1 class="text-center text-2xl font-semibold leading-tight">Select Your Packing</h1>  
 
-    <section id="userPackingSelection" class="flex flex-wrap justify-evenly">
+    <section id="userPackingSelection" class="flex flex-wrap flex-row justify-evenly">
         
         <div class="flex items-center ml-6 mr-0 border bg-white shadow-xl h-24 mb-6 mt-6" style="min-width:250px;">
           <img class="w-32 h-32 rounded-full -ml-10 mr-2 shadow-xl" src="/img/SealingCalculator/2236-01.png" alt="Teadit 2236">
@@ -255,7 +255,7 @@
   </section>
 
   <!--Results Card-->
-  <section id="results" class="xl:ml-1 xl:w-1/4 pb-2 rounded-lg flex flex-col" style="height:max-content; max-width:350px;">
+  <section id="results" class="mx-auto xl:mx-0 xl:ml-1 xl:w-1/4 pb-2 rounded-lg flex flex-col" style="height:max-content; max-width:350px;">
  
     <!--LE Card-->
     <div id="LECard" class="resultCard hidden bg-gray-100 rounded-lg mb-2">
