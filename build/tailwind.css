@@ -92,6 +92,10 @@ a {
  * Remove the border on images inside links in IE 10.
  */
 
+img {
+  border-style: none;
+}
+
 /* Forms
    ========================================================================== */
 
@@ -100,7 +104,9 @@ a {
  * 2. Remove the margin in Firefox and Safari.
  */
 
-button {
+button,
+input,
+select {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
@@ -112,7 +118,8 @@ button {
  * 1. Show the overflow in Edge.
  */
 
-button { /* 1 */
+button,
+input { /* 1 */
   overflow: visible;
 }
 
@@ -121,7 +128,8 @@ button { /* 1 */
  * 1. Remove the inheritance of text transform in Firefox.
  */
 
-button { /* 1 */
+button,
+select { /* 1 */
   text-transform: none;
 }
 
@@ -357,6 +365,26 @@ html {
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
 
+img {
+  border-style: solid;
+}
+
+input::-moz-placeholder {
+  color: #a0aec0;
+}
+
+input:-ms-input-placeholder {
+  color: #a0aec0;
+}
+
+input::-ms-input-placeholder {
+  color: #a0aec0;
+}
+
+input::placeholder {
+  color: #a0aec0;
+}
+
 button,
 [role="button"] {
   cursor: pointer;
@@ -386,7 +414,9 @@ a {
  * normalize.css.
  */
 
-button {
+button,
+input,
+select {
   padding: 0;
   line-height: inherit;
   color: inherit;
@@ -407,7 +437,7 @@ button {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-
+img,
 svg,
 canvas {
   display: block;
@@ -420,6 +450,11 @@ canvas {
  *
  * https://github.com/mozdevs/cssremedy/issues/14
  */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 .container {
   width: 100%;
@@ -449,10 +484,38 @@ canvas {
   }
 }
 
+.appearance-none {
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
 .bg-white {
   --bg-opacity: 1 !important;
   background-color: #fff !important;
   background-color: rgba(255, 255, 255, var(--bg-opacity)) !important;
+}
+
+.bg-gray-100 {
+  --bg-opacity: 1 !important;
+  background-color: #f7fafc !important;
+  background-color: rgba(247, 250, 252, var(--bg-opacity)) !important;
+}
+
+.bg-gray-300 {
+  --bg-opacity: 1 !important;
+  background-color: #e2e8f0 !important;
+  background-color: rgba(226, 232, 240, var(--bg-opacity)) !important;
+}
+
+.bg-gray-800 {
+  --bg-opacity: 1 !important;
+  background-color: #2d3748 !important;
+  background-color: rgba(45, 55, 72, var(--bg-opacity)) !important;
 }
 
 .bg-gray-900 {
@@ -461,10 +524,22 @@ canvas {
   background-color: rgba(26, 32, 44, var(--bg-opacity)) !important;
 }
 
+.bg-green-600 {
+  --bg-opacity: 1 !important;
+  background-color: #38a169 !important;
+  background-color: rgba(56, 161, 105, var(--bg-opacity)) !important;
+}
+
 .bg-blue-700 {
   --bg-opacity: 1 !important;
   background-color: #2b6cb0 !important;
   background-color: rgba(43, 108, 176, var(--bg-opacity)) !important;
+}
+
+.hover\:bg-gray-200:hover {
+  --bg-opacity: 1 !important;
+  background-color: #edf2f7 !important;
+  background-color: rgba(237, 242, 247, var(--bg-opacity)) !important;
 }
 
 .hover\:bg-blue-700:hover {
@@ -473,14 +548,72 @@ canvas {
   background-color: rgba(43, 108, 176, var(--bg-opacity)) !important;
 }
 
+.border-gray-300 {
+  --border-opacity: 1 !important;
+  border-color: #e2e8f0 !important;
+  border-color: rgba(226, 232, 240, var(--border-opacity)) !important;
+}
+
+.border-gray-600 {
+  --border-opacity: 1 !important;
+  border-color: #718096 !important;
+  border-color: rgba(113, 128, 150, var(--border-opacity)) !important;
+}
+
 .border-gray-800 {
   --border-opacity: 1 !important;
   border-color: #2d3748 !important;
   border-color: rgba(45, 55, 72, var(--border-opacity)) !important;
 }
 
+.border-gray-900 {
+  --border-opacity: 1 !important;
+  border-color: #1a202c !important;
+  border-color: rgba(26, 32, 44, var(--border-opacity)) !important;
+}
+
+.border-green-500 {
+  --border-opacity: 1 !important;
+  border-color: #48bb78 !important;
+  border-color: rgba(72, 187, 120, var(--border-opacity)) !important;
+}
+
+.hover\:border-white:hover {
+  --border-opacity: 1 !important;
+  border-color: #fff !important;
+  border-color: rgba(255, 255, 255, var(--border-opacity)) !important;
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem !important;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
+.border-none {
+  border-style: none !important;
+}
+
+.border-2 {
+  border-width: 2px !important;
+}
+
+.border {
+  border-width: 1px !important;
+}
+
 .border-l-2 {
   border-left-width: 2px !important;
+}
+
+.border-b {
+  border-bottom-width: 1px !important;
 }
 
 .cursor-pointer {
@@ -489,6 +622,10 @@ canvas {
 
 .block {
   display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
 }
 
 .flex {
@@ -503,6 +640,10 @@ canvas {
   display: none !important;
 }
 
+.flex-col {
+  flex-direction: column !important;
+}
+
 .flex-wrap {
   flex-wrap: wrap !important;
 }
@@ -511,8 +652,36 @@ canvas {
   align-items: center !important;
 }
 
+.items-baseline {
+  align-items: baseline !important;
+}
+
+.justify-end {
+  justify-content: flex-end !important;
+}
+
 .justify-center {
   justify-content: center !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.justify-evenly {
+  justify-content: space-evenly !important;
+}
+
+.flex-1 {
+  flex: 1 1 0% !important;
+}
+
+.flex-grow {
+  flex-grow: 1 !important;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0 !important;
 }
 
 .font-medium {
@@ -527,12 +696,32 @@ canvas {
   font-weight: 700 !important;
 }
 
+.h-3 {
+  height: 0.75rem !important;
+}
+
 .h-4 {
   height: 1rem !important;
 }
 
+.h-24 {
+  height: 6rem !important;
+}
+
+.h-32 {
+  height: 8rem !important;
+}
+
 .h-64 {
   height: 16rem !important;
+}
+
+.h-auto {
+  height: auto !important;
+}
+
+.text-sm {
+  font-size: 0.875rem !important;
 }
 
 .text-base {
@@ -543,8 +732,20 @@ canvas {
   font-size: 1.125rem !important;
 }
 
+.text-xl {
+  font-size: 1.25rem !important;
+}
+
+.text-2xl {
+  font-size: 1.5rem !important;
+}
+
 .text-3xl {
   font-size: 1.875rem !important;
+}
+
+.text-4xl {
+  font-size: 2.25rem !important;
 }
 
 .text-5xl {
@@ -557,6 +758,14 @@ canvas {
 
 .leading-10 {
   line-height: 2.5rem !important;
+}
+
+.leading-none {
+  line-height: 1 !important;
+}
+
+.leading-tight {
+  line-height: 1.25 !important;
 }
 
 .leading-relaxed {
@@ -575,13 +784,48 @@ canvas {
   margin: 2rem !important;
 }
 
+.m-auto {
+  margin: auto !important;
+}
+
+.my-1 {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.mx-4 {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
+
+.my-6 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mr-0 {
+  margin-right: 0 !important;
+}
+
 .ml-0 {
   margin-left: 0 !important;
+}
+
+.mr-1 {
+  margin-right: 0.25rem !important;
+}
+
+.mr-2 {
+  margin-right: 0.5rem !important;
 }
 
 .mb-2 {
@@ -596,12 +840,32 @@ canvas {
   margin-top: 0.75rem !important;
 }
 
+.mr-3 {
+  margin-right: 0.75rem !important;
+}
+
 .mt-4 {
   margin-top: 1rem !important;
 }
 
 .mb-4 {
   margin-bottom: 1rem !important;
+}
+
+.mt-6 {
+  margin-top: 1.5rem !important;
+}
+
+.mr-6 {
+  margin-right: 1.5rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem !important;
+}
+
+.ml-6 {
+  margin-left: 1.5rem !important;
 }
 
 .mt-24 {
@@ -616,13 +880,40 @@ canvas {
   margin-left: auto !important;
 }
 
+.-mt-2 {
+  margin-top: -0.5rem !important;
+}
+
+.-ml-10 {
+  margin-left: -2.5rem !important;
+}
+
 .focus\:outline-none:focus {
   outline: 0 !important;
+}
+
+.p-2 {
+  padding: 0.5rem !important;
+}
+
+.py-1 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+.py-2 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .px-2 {
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;
+}
+
+.px-3 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
 }
 
 .px-4 {
@@ -635,13 +926,58 @@ canvas {
   padding-bottom: 1.5rem !important;
 }
 
+.px-6 {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
 .px-8 {
   padding-left: 2rem !important;
   padding-right: 2rem !important;
 }
 
+.pt-1 {
+  padding-top: 0.25rem !important;
+}
+
+.pl-1 {
+  padding-left: 0.25rem !important;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem !important;
+}
+
+.pl-2 {
+  padding-left: 0.5rem !important;
+}
+
+.pr-4 {
+  padding-right: 1rem !important;
+}
+
+.pt-6 {
+  padding-top: 1.5rem !important;
+}
+
+.top-0 {
+  top: 0 !important;
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+.fill-current {
+  fill: currentColor !important;
+}
+
 .text-center {
   text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
 }
 
 .text-white {
@@ -650,10 +986,34 @@ canvas {
   color: rgba(255, 255, 255, var(--text-opacity)) !important;
 }
 
+.text-gray-300 {
+  --text-opacity: 1 !important;
+  color: #e2e8f0 !important;
+  color: rgba(226, 232, 240, var(--text-opacity)) !important;
+}
+
 .text-gray-500 {
   --text-opacity: 1 !important;
   color: #a0aec0 !important;
   color: rgba(160, 174, 192, var(--text-opacity)) !important;
+}
+
+.text-gray-600 {
+  --text-opacity: 1 !important;
+  color: #718096 !important;
+  color: rgba(113, 128, 150, var(--text-opacity)) !important;
+}
+
+.text-gray-900 {
+  --text-opacity: 1 !important;
+  color: #1a202c !important;
+  color: rgba(26, 32, 44, var(--text-opacity)) !important;
+}
+
+.text-red-700 {
+  --text-opacity: 1 !important;
+  color: #c53030 !important;
+  color: rgba(197, 48, 48, var(--text-opacity)) !important;
 }
 
 .text-blue-700 {
@@ -674,8 +1034,31 @@ canvas {
   color: rgba(255, 255, 255, var(--text-opacity)) !important;
 }
 
+.hover\:text-gray-500:hover {
+  --text-opacity: 1 !important;
+  color: #a0aec0 !important;
+  color: rgba(160, 174, 192, var(--text-opacity)) !important;
+}
+
 .uppercase {
   text-transform: uppercase !important;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
+
+.hover\:no-underline:hover {
+  text-decoration: none !important;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em !important;
 }
 
 .tracking-wide {
@@ -686,8 +1069,24 @@ canvas {
   letter-spacing: 0.05em !important;
 }
 
+.whitespace-no-wrap {
+  white-space: nowrap !important;
+}
+
+.w-3 {
+  width: 0.75rem !important;
+}
+
 .w-4 {
   width: 1rem !important;
+}
+
+.w-12 {
+  width: 3rem !important;
+}
+
+.w-32 {
+  width: 8rem !important;
 }
 
 .w-64 {
@@ -696,6 +1095,26 @@ canvas {
 
 .w-auto {
   width: auto !important;
+}
+
+.w-5\/12 {
+  width: 41.666667% !important;
+}
+
+.w-7\/12 {
+  width: 58.333333% !important;
+}
+
+.w-9\/12 {
+  width: 75% !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.z-10 {
+  z-index: 10 !important;
 }
 
 .transition-all {
@@ -708,8 +1127,16 @@ canvas {
 
 @media (min-width: 640px) {
 
+  .sm\:text-sm {
+    font-size: 0.875rem !important;
+  }
+
   .sm\:text-xl {
     font-size: 1.25rem !important;
+  }
+
+  .sm\:leading-5 {
+    line-height: 1.25rem !important;
   }
 }
 
@@ -722,8 +1149,28 @@ canvas {
 
 @media (min-width: 1024px) {
 
+  .lg\:flex {
+    display: flex !important;
+  }
+
+  .lg\:hidden {
+    display: none !important;
+  }
+
+  .lg\:items-center {
+    align-items: center !important;
+  }
+
   .lg\:max-w-3xl {
     max-width: 48rem !important;
+  }
+
+  .lg\:pt-0 {
+    padding-top: 0 !important;
+  }
+
+  .lg\:w-auto {
+    width: auto !important;
   }
 
   .lg\:w-1\/2 {
@@ -732,6 +1179,27 @@ canvas {
 }
 
 @media (min-width: 1280px) {
+
+  .xl\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .xl\:text-2xl {
+    font-size: 1.5rem !important;
+  }
+
+  .xl\:mx-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .xl\:mb-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .xl\:ml-1 {
+    margin-left: 0.25rem !important;
+  }
 
   .xl\:max-w-3xl {
     max-width: 48rem !important;
