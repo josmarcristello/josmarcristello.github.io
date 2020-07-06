@@ -133,9 +133,15 @@
     </div>
     
     <div class="hidden admin-toggle flex whitespace-no-wrap border-b border-gray-300 items-baseline">
-      <span class="text-gray-500">Number of Rings</span>
-      <input id="numberRings" class="w-5/12 ml-auto pr-4 py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*." placeholder="" aria-label="Stem Diameter" tabindex="3" value="2" required>
-      <h1 class="text-gray-500 text-sm text-right mr-1"style="width: 32px;">rings</h1>
+      <div class="w-4/12">
+        <span class="text-gray-500">Number of Rings</span>
+      </div>
+      <div class="ml-auto"> 
+        <input id="numberRings" class="py-1 my-1 text-right bg-transparent leading-tight focus:outline-none hover:bg-gray-200 rounded-lg" type="text" pattern="[0-9]*." placeholder="" aria-label="Stem Diameter" tabindex="3" value="2" required>
+      </div>
+      <div class="w-2/12 pl-4">
+        <h1 class="text-gray-500 text-sm text-right mr-1"style="width: 32px;">rings</h1>
+      </div>
     </div>
 
     <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline">
@@ -279,7 +285,7 @@
           <img class="w-32 h-32 rounded-full -ml-10 mr-2 shadow-xl" src="/img/SealingCalculator/Interrogation-Mark.jpg" alt="Teadit 2236">
           <div class="text-sm pr-4" style="min-width:160px;">
             <p class="text-gray-900 leading-none text-2xl text-center">Custom</p>
-            <p class="text-gray-600 text-center text-sm tracking-tight">Filled e-PTFE</p>
+            <p class="text-gray-600 text-center text-sm tracking-tight">N/A</p>
             <button class="selectPacking justify-center flex text-xl items-baseline px-2 w-9/12 rounded-full mx-auto border border-green-500 fill-current">
               <div class="ml-2">Select</div>
               <svg class="inline-block ml-auto w-4 h-4" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M27.45 15.11l-22-11a1 1 0 00-1.08.12 1 1 0 00-.33 1L7 16 4 26.74A1 1 0 005 28a1 1 0 00.45-.11l22-11a1 1 0 000-1.78zm-20.9 10L8.76 17H18v-2H8.76L6.55 6.89 24.76 16z"/><path fill="none" data-name="&lt;Transparent Rectangle&gt;" d="M0 0h32v32H0z"/></svg>

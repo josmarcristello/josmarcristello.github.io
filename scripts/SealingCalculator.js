@@ -55,7 +55,7 @@ function setListeners(){
     hiBoltTorqueUnits.addEventListener("click", convertTorqueResult);
     medBoltTorqueUnits.addEventListener("click", convertTorqueResult);
     lowBoltTorqueUnits.addEventListener("click", convertTorqueResult);
-    
+
     for (let i = 0; i < boltYieldMsgBox.length; i++) {
         boltYieldMsgBox[i].addEventListener("click", boltYieldMessageBox);
     }    
@@ -304,7 +304,7 @@ function processPacking(packing){
     checkBoltYield();
 
     //Scroll to the newly created card. Note that this only applies if calculation concludes.
-    //Only applies to mobile
+    //Only applies to mobile/small screens
     if (screen.width < 1280){
         $('html, body').animate({ scrollTop: $("#results").offset().top}, 1000);
     }
@@ -474,7 +474,7 @@ function calculate(packingStress, frictionCoefficient, packingCompression){
 async function loadForm(){
     
     const { value: savedValve } = await Swal.fire({
-        title: 'Registered Valves',
+        title: 'Select a Valve',
         input: 'select',
         inputOptions: {
           'Standards': {
@@ -486,7 +486,7 @@ async function loadForm(){
             Emerson_VC: 'Emerson V.C.'
           }
         },
-        inputPlaceholder: 'Select a Valve',
+        inputPlaceholder: 'Registered Valves',
         showCancelButton: true,
       })
     

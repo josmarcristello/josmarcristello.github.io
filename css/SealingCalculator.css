@@ -5,7 +5,7 @@ input:invalid{
     background-color:rgb(226,232,240) !important;
 }
 
-input{
+#calculatorWrapper input{
     /*border: 1px solid black !important;*/
     width: 130px !important;
 }
