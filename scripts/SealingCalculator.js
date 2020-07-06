@@ -109,7 +109,7 @@ function genericErrorMessageBox(title, message){
 function loadTableData(){
     window.allowableBoltYield=0.75;
     window.minBoltSize=0.25;//in //this limitation is due to root area
-    window.maxBoltSize=5;//in //this limitation is due to root area
+    window.maxBoltSize=4;//in //this limitation is due to root area
     window.BOLT_GRADE_GROUP = [
         {id: '-1',text: 'Select Bolt Grade',},
         {id: 'ASTM A193 B7',text: 'ASTM A193 B7', yieldStressRangeIN: ["<=2.5","<=4","<=7"], yieldStressValueKSI: [105, 95, 75]},
@@ -119,8 +119,8 @@ function loadTableData(){
         {id: 'ASTM A153 651A',text: 'ASTM A153 651A',},
     ];
     window.BOLT_ROOT_GROUP = {
-        rootAreaRangeIN: ["<=1/4", "<=5/16", "<=3/8", "<=7/16", "<=1/2","<=9/16","5/8","3/4"],
-        rootAreaValueINSQ: [0.0269, 0.0454, 0.0678, 0.0933, 0.1257, 0.162, 0.2017, 0.3019],
+        rootAreaRangeIN: ["<=1/4", "<=5/16", "<=3/8", "<=7/16", "<=1/2","<=9/16","<=5/8","<=3/4","<=7/8","<=1", "<=1.125", "<=1.25", "<=1.375", "<=1.5", "<=1.625", "<=1.75", "<=1.875", "<=2.0", "2.25", "<=2.5", "<=2.75", "<=3.0", "<=3.25", "<=3.50", "<=3.75", "<=4.0"],
+        rootAreaValueINSQ: [0.0269, 0.0454, 0.0678, 0.0933, 0.1257, 0.162, 0.2017, 0.3019, 0.4192, 0.5509, 0.7276, 0.9289, 1.155, 1.405, 1.68, 1.979, 2.303, 2.652, 3.422, 4.291, 5.258, 6.32, 7.487, 8.748, 10.11, 11.57],
     };
     window.PACKING_GROUP = [
         {id: "Teadit 2236", packingStress: [73, 55, 35], frictionCoefficient:0.048, packingCompression: [0.7, 0.75, 0.8]},
@@ -129,7 +129,7 @@ function loadTableData(){
         {id: "Teadit 2202", packingStress: [20], frictionCoefficient:0.065, packingCompression:[0.7]},
         {id: "Teadit 2005", packingStress: [55], frictionCoefficient:0.05, packingCompression:[0.7]},
     ];
-    //TODO Emerson_VC bolt is wrong
+    //TODO Emerson_VC bolt material is wrong
     window.VALVE_GROUP = [
         {id: "API622_64", stemDiameter: 25.4, packingSize:6.4, numberRings: 5, numberBolts: 2, mediaPressure: 40, boltDiameter: "5/8", boltGrade: "ASTM A193 B7", KFactor: 0.2},
         {id: "API622_48", stemDiameter: 11.1, packingSize:4.8, numberRings: 5, numberBolts: 2, mediaPressure: 40, boltDiameter: "3/8", boltGrade: "ASTM A193 B7", KFactor: 0.2},
@@ -143,7 +143,7 @@ function checkForm(){
     //2. Check for invalid entries (such as letters where there should be values)
     var formLabel;
     for (let i = 0; i < formItems.length; i++) {
-        formLabel = formItems[i].parentElement.childNodes[1].innerText; //Name of the label ("Stem Diameter")
+        formLabel = formItems[i].parentElement.parentElement.children[0].innerText; //Name of the label ("Stem Diameter")
         if (formItems[i].value == "" && formLabel != "Number of Rings"){return;} //Form is empty
         if (formItems[i].value < 0 && formLabel != "Media Pressure"){genericErrorMessageBox("Negative Value", formLabel+" cannot be negative."); return;} //Form is empty
         if (formItems[i].value > 1 && formLabel == '"k" Factor'){genericErrorMessageBox("Value Out of Bounds", formLabel+" is an adimensional value between 0 and 1."); return;}
@@ -621,7 +621,7 @@ function addAllColumnHeaders(arr, table) {
 }
 
 
-function boltYieldMessageBoxFix2(jsonString){
+function ShowDataTable(jsonString){
     Swal.fire({
         title: 'High bolt Yield %',
         imageUrl: '',
