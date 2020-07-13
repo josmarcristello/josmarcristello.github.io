@@ -510,10 +510,10 @@ img {
   background-color: rgba(247, 250, 252, var(--bg-opacity));
 }
 
-.bg-gray-300 {
+.bg-gray-400 {
   --bg-opacity: 1;
-  background-color: #e2e8f0;
-  background-color: rgba(226, 232, 240, var(--bg-opacity));
+  background-color: #cbd5e0;
+  background-color: rgba(203, 213, 224, var(--bg-opacity));
 }
 
 .bg-gray-800 {
@@ -852,6 +852,10 @@ img {
   margin-bottom: 1rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -890,6 +894,10 @@ img {
 
 .-ml-10 {
   margin-left: -2.5rem;
+}
+
+.outline-none {
+  outline: 0;
 }
 
 .focus\:outline-none:focus {
@@ -933,11 +941,6 @@ img {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .pt-1 {
