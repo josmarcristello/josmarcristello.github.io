@@ -389,5 +389,35 @@ function cheat(){
             }, 500)      
         }
     })
-
 }
+
+//Setting Hotkeys
+document.getElementsByTagName("body")[0].onkeypress=function(e){
+    var s = String.fromCharCode(e.which );
+    switch(s){
+        case "1":
+            document.getElementById("gamePanel").children[0].click();
+           break;
+        case "2":
+            document.getElementById("gamePanel").children[1].click();
+           break;
+        case "3":
+            document.getElementById("gamePanel").children[2].click();
+           break;
+        case "4":
+            if (document.getElementById("gamePanel").children.length <= 3){break;}    
+            document.getElementById("gamePanel").children[3].click();
+            break;
+        case "5":
+            if (document.getElementById("gamePanel").children.length <= 3){break;}
+            document.getElementById("gamePanel").children[4].click();
+            break;
+        case "6":
+            if (document.getElementById("gamePanel").children.length <= 3){break;}
+            document.getElementById("gamePanel").children[5].click();
+            break;
+        case "r":
+            new_game();
+            break;
+    }
+};
