@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<!--TRACKING-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171149776-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-171149776-1');
+</script>
+<!--Clicky trackign script-->
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101266516);</script>
+<script async src="//static.getclicky.com/js"></script>
+<!--TRACKING END-->
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sealing Calculator</title>
@@ -17,6 +32,12 @@
   body{
     /*font-family: "Montserrat";*/
     /*font-size: 16px;*/
+    /*
+    background: #bdc3c7;
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    */
+
   }
 
   .form-select{
@@ -60,7 +81,7 @@
 </style>
 
 </head>
-<body class="bg-gray-300 text-gray-900 antialiased">
+<body class="bg-gray-400 text-gray-900 antialiased">
 
 <!--Navbar-->
 <nav class="flex items-center justify-between flex-wrap bg-gray-800 px-6 py-2 w-full z-10 top-0">
@@ -187,8 +208,8 @@
         </select>  
       </div>
     </div>
-
-    <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline">
+    <!--
+    <div class="hidden flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline">
       <div class="w-4/12">
         <span class="text-gray-500 flex">Bolt Grade</span>
       </div>
@@ -197,6 +218,7 @@
         </select>
       </div>
     </div>
+    -->
 
     <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline">
     <div class="w-4/12">
@@ -205,7 +227,10 @@
     <div class="ml-auto mr-2/12">
       <input id="kFactor" class="mr-1 xl:mr-0 py-1 my-1 text-right appearance-none bg-transparent text-gray-900 leading-tight focus:outline-none hover:bg-gray-3200 rounded-lg" pattern="[0-9]*\.*\/*[0-9]*" type="text" value="0.2" placeholder="" tabindex="8" required>
     </div>
-    
+    </div>
+
+    <div class="flex whitespace-no-wrap">
+        <select id="boltGrade" class="js-basic-single flex focus:outline-none outline-none " style="width:180px;"></select>
     </div>
  
   </section>

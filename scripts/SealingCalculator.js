@@ -1,6 +1,8 @@
 //TODO: Add a way to look into data tables (the function is done)
 //TODO: Fix bolt list yield stress. I'm pretty sure its wrong, but i'm used the same we always used.
 //TODO: Add a decent-looking footer
+//TODO: Figure out why it fucks on mobile/firefox
+//TODO: How fucking cool would be to have like, a valve image on the "results" section, and have the parts you're in highlight?
 
 //buttons
 resetButton=document.querySelector("#resetButton");
@@ -67,8 +69,8 @@ function setListeners(){
     $(".js-basic-single").select2({
         placeholder: "Select",
         allowClear: false,
-        theme: "flat",
-        data: BOLT_GRADE_GROUP                
+        data: BOLT_GRADE_GROUP,
+        //theme: "flat",
     });
 
     for (let i = 0; i < packingButtons.length; i++) {
