@@ -393,7 +393,7 @@ function cheat(){
 
 //Setting Hotkeys
 document.getElementsByTagName("body")[0].onkeypress=function(e){
-    var s = String.fromCharCode(e.which );
+    var s = String.fromCharCode(e.which);
     switch(s){
         case "1":
             document.getElementById("gamePanel").children[0].click();
@@ -418,6 +418,11 @@ document.getElementsByTagName("body")[0].onkeypress=function(e){
             break;
         case "r":
             new_game();
+            break;
+        case "R":
+            new_game();
+            break;
+        default:
             break;
     }
 };
