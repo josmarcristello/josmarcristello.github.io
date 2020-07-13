@@ -28,58 +28,6 @@
 <script src="scripts/select2.min.js"></script>
 <script src="scripts/tipso.min.js"></script>
 
-<style>
-  body{
-    /*font-family: "Montserrat";*/
-    /*font-size: 16px;*/
-    /*
-    background: #bdc3c7;
-    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
-    background: linear-gradient(to right, #2c3e50, #bdc3c7);
-    */
-
-  }
-
-  .form-select{
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -webkit-print-color-adjust: exact;
-    /*color-adjust: exact;*/
-    background-repeat: no-repeat;    
-    background-position: right 0 center;
-    /*background-size: 1.0em 1.0em;*/
-    height: auto;
-  }
-
-
-  .selectPacking{
-    color:rgba(26,32,44,1); /*bg-gray-900*/
-  }
-  .selectPacking:hover{
-    background-color:rgba(56,161,105,1); /*bg-green-600*/
-    color:rgba(255,255,255);
-  }
-
-  .activePacking{
-    text-transform: uppercase;
-    background-color:rgba(56,161,105,1); /*bg-green-600*/
-    color:rgba(255,255,255);
-  }
-  .activePacking:hover{
-    color:rgba(26,32,44,1); /*bg-gray-900*/
-    background-color: transparent;
-  }
-
-  @media (min-width: 1280px){
-    .xl\:w-48pct {
-      width: 48% !important;
-    }
-  }
- 
-</style>
-
 </head>
 <body class="bg-gray-400 text-gray-900 antialiased">
 
@@ -208,17 +156,6 @@
         </select>  
       </div>
     </div>
-    <!--
-    <div class="hidden flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline">
-      <div class="w-4/12">
-        <span class="text-gray-500 flex">Bolt Grade</span>
-      </div>
-      <div class="mx-auto py-1" style="">
-        <select id="boltGrade" class="flex js-basic-single" style="width: 100%;">
-        </select>
-      </div>
-    </div>
-    -->
 
     <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline">
     <div class="w-4/12">
@@ -323,11 +260,11 @@
   </section>
 
   <!--Results Card-->
-  <section id="results" class="mx-auto xl:mx-0 xl:ml-1 xl:w-1/4 pb-2 rounded-lg flex flex-col" style="height:max-content; max-width:350px;">
+  <section id="results" class="mx-auto xl:mx-0 xl:ml-1 xl:w-1/4 rounded-lg flex flex-col justify-between" style="max-width:350px;">
  
     <!--LE Card-->
     <div id="LECard" class="resultCard hidden bg-gray-100 rounded-lg mb-2">
-      <div class="w-full border-gray-900 border-2 flex flex-wrap p-2 rounded-lg" style="max-height: 250px;">
+      <div class="w-full border-gray-900 border-2 flex flex-wrap p-2 py-4 rounded-lg" style="max-height: 250px;">
         <p class="text-xl text-gray-900 font-semibold text-center w-full">Certified Low Emission Valves</p>
         <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline w-full pt-1"></div>
         <div class="hidden errorBoltYield w-full">
@@ -370,7 +307,7 @@
     
     <!--Recommended - General Service Card-->
     <div id="GeneralCard" class="resultCard bg-gray-100 rounded-lg mb-2">
-      <div class="w-full border-gray-900 border-2 flex flex-wrap p-2 rounded-lg" style="max-height: 250px;">
+      <div class="w-full border-gray-900 border-2 flex flex-wrap p-2 py-4 rounded-lg" style="max-height: 250px;">
         <p class="text-xl text-gray-900 font-semibold text-center w-full">General Service Valves</p>
         <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline w-full pt-1"></div>
         <div class="hidden errorBoltYield w-full">
@@ -407,8 +344,8 @@
     </div>
 
     <!--Minimum - General Service Valves-->
-    <div id="MinimumCard" class="resultCard hidden bg-gray-100 rounded-lg mb-2">
-      <div class="w-full border-gray-900 border-2 flex flex-wrap p-2 rounded-lg" style="max-height: 250px;">
+    <div id="MinimumCard" class="resultCard hidden bg-gray-100 rounded-lg">
+      <div class="w-full border-gray-900 border-2 flex flex-wrap p-2 py-4 rounded-lg" style="max-height: 250px;">
         <p class="text-xl text-gray-900 font-semibold text-center w-full">Min. - General Service Valves</p>
         <div class="flex justify-between whitespace-no-wrap border-b border-gray-300 items-baseline w-full pt-1"></div>
         <div class="hidden errorBoltYield w-full">
