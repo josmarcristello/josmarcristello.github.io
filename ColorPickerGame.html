@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--TRACKING-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171149776-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-171149776-1');
+  </script>
+  <!--Clicky trackign script-->
+  <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101266516);</script>
+  <script async src="//static.getclicky.com/js"></script>
+  <!--TRACKING END-->
+
+  <title>Color Picker Game</title>
+  <link rel="stylesheet" href="build/tailwind.css">
+  <script src="scripts/Chart.min.js"></script>
+</head>
+<style>
+  body{
+    /*font-family: "Montserrat";*/
+    font-size: 16px;
+  }
+</style>
+<body class="bg-gray-900">
+
+<section id="header" class="bg-blue-700">
+    <div class="container mx-auto text-white text-center text-3xl uppercase tracking-wider py-6 transition-all duration-300">
+        <h1>The Great <span class="block font-semibold text-5xl leading-10">RGB(100, 100, 100)</span> Guessing Game</h1>
+    </div>
+</section>
+<section id="navbar" class="bg-white">
+    <div class="flex container xl:max-w-3xl lg:max-w-3xl mx-auto px-4 text-blue-700 font-bold tracking-wide uppercase items-center">
+        <div id="newGame" class="hover:bg-blue-700 hover:text-white px-2 cursor-pointer transition-all duration-300">New Colors</div>
+        <div id="textPrompt" class="px-2 ml-auto text-white"></div>
+        <div id="easyButton" class="ml-auto hover:bg-blue-700 hover:text-white px-2 cursor-pointer transition-all duration-300">Easy</div>
+        <div id="hardButton" class="ml-0 hover:bg-blue-700 hover:text-white px-2 cursor-pointer transition-all duration-300">Hard</div>
+    </div>
+</section>
+<section id="gamePanel" class="container xl:max-w-5xl mx-auto mt-3 flex flex-wrap justify-center" >
+    <button class="w-64 h-64 m-3 focus:outline-none transition-all duration-300" style="border-radius:2rem;"></button>
+    <button class="w-64 h-64 m-3 focus:outline-none transition-all duration-300" style="border-radius:2rem;"></button>
+    <button class="w-64 h-64 m-3 focus:outline-none transition-all duration-300" style="border-radius:2rem;"></button>
+    <button class="w-64 h-64 m-3 focus:outline-none transition-all duration-300" style="border-radius:2rem;"></button>
+    <button class="w-64 h-64 m-3 focus:outline-none transition-all duration-300" style="border-radius:2rem;"></button>
+    <button class="w-64 h-64 m-3 focus:outline-none transition-all duration-300" style="border-radius:2rem;"></button>
+</section>
+<section id="navbar" class="bg-white mt-3">
+  <div class="flex container xl:max-w-3xl lg:max-w-3xl mx-auto px-4 text-blue-700 font-bold tracking-wide uppercase items-center">
+      <div id="adviceButton" class="mr-auto hover:bg-blue-700 hover:text-white px-2 cursor-pointer transition-all duration-300">Advice</div>
+      <div id="statisticsButton" class="mx-auto hover:bg-blue-700 hover:text-white px-2 cursor-pointer transition-all duration-300">Statistics</div>
+      <div id="helpButton" class="ml-auto hover:bg-blue-700 hover:text-white px-2 cursor-pointer transition-all duration-300">Help</div>
+  </div>
+</section>
+<section id="statisticsPanel" class="hidden">
+  <canvas id="myChart" class="container xl:max-w-5xl mx-auto mt-24 flex flex-wrap justify-center"></canvas>
+  <canvas id="bar-chart" class="container xl:max-w-5xl mx-auto mt-24 flex flex-wrap justify-center"></canvas>
+</section>
+
+
+</body>
+<script src="scripts/konami.js"></script>
+<script src="scripts/sweetalert2@9.js"></script>
+<script src="scripts/ColorPicker.js"></script>
+</html>
