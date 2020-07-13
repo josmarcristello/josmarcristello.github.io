@@ -1,3 +1,8 @@
+//TODO: Add zelda sounds (variety)
+//TODO: Add cooler animations
+//TODO: Make something that plays piano songs using the keys
+
+
 window.circles =[]
 window.mycircle;
 Howler.volume(0.2);
@@ -69,7 +74,7 @@ function onFrame(event){
 
 //Defining Sounds
 //https://github.com/ledlamp/piano-sounds/tree/master/PianoSounds
-window.defaultKeys = ["bubbles", "clay", "confetti","corona","dotted-spiral","flash-1", "flash-2", "flash-3", "glimmer", "moon", "pinwheel", "piston-1", "piston-2", "piston-3", "prism-1", "prism-2", "prism-3", "splits", "squiggle", "strike", "suspension", "timer", "ufo", "veil", "wipe", "zig-zag"];
+window.defaultKeys = ["bubbles", "clay", "confetti","corona","dotted-spiral","flash-1", "flash-2", "flash-3", "glimmer", "moon", "pinwheel", "piston-1", "piston-2", "piston-3", "prism-1", "prism-2", "prism-3", "splits", "squiggle", "strike", "suspension", "timer", "ufo", "veil", "wipe", "zig-zag", "wipe", "zig-zag"];
 window.pianoKeys = ["a-1","a0", "a1", "a2", "a3", "a4", "a5", "a6", "as-1", "as0", "as1", "as2", "as3", "as4", "as5", "as6", "b-1", "b0", "b1", "b2", "b3", "b4", "b5", "b6", "c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "cs0", "cs1", "cs2", "cs3", "cs4", "cs5", "cs6", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "ds0", "ds1", "ds2", "ds3", "ds4", "ds5", "ds6", "e0", "e1", "e2", "e3", "e4", "e5", "e6", "f0", "f1", "f2", "f3", "f4", "f5", "f6", "fs0", "fs1", "fs2", "fs3", "fs4", "fs5", "fs6", "g0", "g1", "g2", "g3", "g4", "g5", "g6", "gs0", "gs1", "gs2", "gs3", "gs4", "gs5", "gs6" ];
 window.movieKeys = ["01-berberian-sound-studio-melon-smashing","03-star-wars-blaster-pistol", "04-star-wars-lightsaber", "05-star-wars-chewbacca", "06-star-wars-tie-fighter","08-star-wars-speeder-bike", "10-terminator-2-crushed-skull", "12-terminator-2-bullets-hitting-the-t1000", "18-lord-of-the-rings-uruk-hai", "21-jurassic-park-t-rex", "28-transformers-optimus-prime-flying", "32-the-exorcist-head-turning", "35-x-men-claws","38-predator-predator-movement","50_sniper_shot-Liam-2028603980", "Alien_Machine_Gun-Matt_Cutillo-2023875589", "apprehensive-Mike_Koenig-1694170958", "Bow_Fire_Arrow-Stephan_Schutze-2133929391", "dragon_ball_z_scream_9-RA_The_Sun_God-952538986", "Evil_Laugh_1-Timothy-64737261", "Hl2_Rebel-Ragdoll485-573931361", "Incoming_Suspense-Maximilien_-1060577487", "No_mercy-Hipis-1227409429", "Panic-Mike_Koenig-717059030", "Pill_Bottle-Mike_Koenig-2124041677", "Scary-Titus_Calen-1449371204", "shotgun-mossberg590-RA_The_Sun_God-451502290", "Sqeaking_door-Sarasprella-1653672487"];
 
@@ -206,3 +211,4 @@ var playlist = function(e) {
 
 //playlist();
 */
+
