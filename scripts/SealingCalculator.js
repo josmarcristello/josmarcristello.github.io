@@ -170,7 +170,7 @@ function checkForm(){
         if (formItems[i].value > 1 && formLabel == '"k" Factor'){genericErrorMessageBox("Value Out of Bounds", formLabel+" is an adimensional value between 0 and 1."); return;}
         if (formLabel == "Bolt Diameter"){
             var boltDiameter = formItems[i].value; 
-            userBoltDiameterUnits.value != "in" ? boltDiameter = convert(eval(userBoltDiameter.value),"mm","in") : boltDiameter = eval(formItems[i].value) //in
+            userBoltDiameterUnits.value != "in" ? boltDiameter = convert(Calculation.calculate(userBoltDiameter.value),"mm","in") : boltDiameter = Calculation.calculate(formItems[i].value) //in
             if (boltDiameter < minBoltSize){
                 genericErrorMessageBox("Bolt too small", formLabel+" smaller than " + minBoltSize + " inches is not supported."); 
                 return;
@@ -180,7 +180,7 @@ function checkForm(){
             }
         } //Form is empty
         try {
-            eval(formItems[i].value); 
+            Calculation.calculate(formItems[i].value); 
         } catch (e) {
             if (e) {
                 //If the form is a text (and shouldnt be)
@@ -232,7 +232,7 @@ async function adminPacking(){
             } else if (formValues[2] >= 1) {
                 formValues[2]=0;
             } else {
-                formValues[i] = eval(formValues[i]);
+                formValues[i] = Calculation.calculate(formValues[i]);
             }
         }
         PACKING_GROUP.push({id: "Custom", packingStress: [formValues[0]], frictionCoefficient: formValues[1], packingCompression: [formValues[2]]});
@@ -337,12 +337,13 @@ function queryBoltData(boltGrade, boltDiameter){
     var boltRootArea; //in2
     boltObject = BOLT_GRADE_GROUP.find( record => record.text == boltGrade);
     for (let i = 0; i < boltObject.yieldStressRangeIN.length; i++) {
-        if (!boltYieldStress && eval(boltDiameter + boltObject.yieldStressRangeIN[i])){
+        if (!boltYieldStress && parse_str(Calculation.calculate(boltDiameter) + boltObject.yieldStressRangeIN[i])){
             boltYieldStress = boltObject.yieldStressValueKSI[i];
         }
     }
+    
     for (let i = 0; i < BOLT_ROOT_GROUP.rootAreaRangeIN.length; i++) {
-        if(!boltRootArea && eval(boltDiameter + BOLT_ROOT_GROUP.rootAreaRangeIN[i])){
+        if(!boltRootArea && parse_str(Calculation.calculate(boltDiameter) + BOLT_ROOT_GROUP.rootAreaRangeIN[i])){
             boltRootArea = BOLT_ROOT_GROUP.rootAreaValueINSQ[i];
         }
     }
@@ -458,13 +459,13 @@ function checkBoltYield(){
 
 function calculate(packingStress, frictionCoefficient, packingCompression){    
     //Either converts of evaluates the expression inside.    
-    userStemDiameterUnits.value != "mm" ? stemDiameter = convert(eval(userStemDiameter.value),"in","mm") : stemDiameter = eval(userStemDiameter.value); //mm
-    userPackingSizeUnits.value != "mm" ? packingSize = convert(eval(userPackingSize.value),"in","mm") : packingSize = eval(userPackingSize.value); //mm
-    userMediaPressureUnits.value != "bar" ? mediaPressure = convert(eval(userMediaPressure.value),"psi","bar") : mediaPressure = eval(userMediaPressure.value); //bar
-    userBoltDiameterUnits.value != "in" ? boltDiameter = convert(eval(userBoltDiameter.value),"mm","in") : boltDiameter = eval(userBoltDiameter.value) //in
-    numberRings=eval(userNumberRings.value) || 0; //adim
-    numberBolts=eval(userNumberBolts.value); //adim
-    kFactor=eval(userKFactor.value); //adim
+    userStemDiameterUnits.value != "mm" ? stemDiameter = convert(Calculation.calculate(userStemDiameter.value),"in","mm") : stemDiameter = Calculation.calculate(userStemDiameter.value); //mm
+    userPackingSizeUnits.value != "mm" ? packingSize = convert(Calculation.calculate(userPackingSize.value),"in","mm") : packingSize = Calculation.calculate(userPackingSize.value); //mm
+    userMediaPressureUnits.value != "bar" ? mediaPressure = convert(Calculation.calculate(userMediaPressure.value),"psi","bar") : mediaPressure = Calculation.calculate(userMediaPressure.value); //bar
+    userBoltDiameterUnits.value != "in" ? boltDiameter = convert(Calculation.calculate(userBoltDiameter.value),"mm","in") : boltDiameter = Calculation.calculate(userBoltDiameter.value) //in
+    numberRings=Calculation.calculate(userNumberRings.value) || 0; //adim
+    numberBolts=Calculation.calculate(userNumberBolts.value); //adim
+    kFactor=Calculation.calculate(userKFactor.value); //adim
     boltGrade = $('#boltGrade').val();
 
     [boltYield, rootArea] = queryBoltData(boltGrade, boltDiameter);
@@ -709,4 +710,124 @@ const Toast = Swal.mixin({
       toast.addEventListener('mouseenter', Swal.stopTimer)
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
-  })
+  });
+
+
+class Calculation {
+    constructor() {
+        this._symbols = {};
+        this.defineOperator("!", this.factorial,      "postfix", 6);
+        this.defineOperator("^", Math.pow,            "infix",   5, true);
+        this.defineOperator("*", this.multiplication, "infix",   4);
+        this.defineOperator("/", this.division,       "infix",   4);
+        this.defineOperator("+", this.last,           "prefix",  3);
+        this.defineOperator("-", this.negation,       "prefix",  3);
+        this.defineOperator("+", this.addition,       "infix",   2);
+        this.defineOperator("-", this.subtraction,    "infix",   2);
+        this.defineOperator(",", Array.of,            "infix",   1);
+        this.defineOperator("(", this.last,           "prefix");
+        this.defineOperator(")", null,                "postfix");
+        this.defineOperator("min", Math.min);
+        this.defineOperator("sqrt", Math.sqrt);
+    }
+    // Method allowing to extend an instance with more operators and functions:
+    defineOperator(symbol, f, notation = "func", precedence = 0, rightToLeft = false) {
+        // Store operators keyed by their symbol/name. Some symbols may represent
+        // different usages: e.g. "-" can be unary or binary, so they are also
+        // keyed by their notation (prefix, infix, postfix, func):
+        if (notation === "func") precedence = 0;
+        this._symbols[symbol] = Object.assign({}, this._symbols[symbol], {
+            [notation]: {
+                symbol, f, notation, precedence, rightToLeft, 
+                argCount: 1 + (notation === "infix")
+            },
+            symbol,
+            regSymbol: symbol.replace(/[\\^$*+?.()|[\]{}]/g, '\\$&')
+                + (/\w$/.test(symbol) ? "\\b" : "") // add a break if it's a name 
+        });
+    }
+    last(...a)           { return a[a.length-1] }
+    negation(a)          { return -a }
+    addition(a, b)       { return a + b }
+    subtraction(a, b)    { return a - b }
+    multiplication(a, b) { return a * b }
+    division(a, b)       { return a / b }
+    factorial(a) {
+        if (a%1 || !(+a>=0)) return NaN
+        if (a > 170) return Infinity;
+        let b = 1;
+        while (a > 1) b *= a--;
+        return b;
+    }
+    calculate(expression) {
+        let match;
+        const values = [],
+            operators = [this._symbols["("].prefix],
+            exec = _ => {
+                let op = operators.pop();
+                values.push(op.f(...[].concat(...values.splice(-op.argCount))));
+                return op.precedence;
+            },
+            error = msg => {
+                let notation = match ? match.index : expression.length;
+                return `${msg} at ${notation}:\n${expression}\n${' '.repeat(notation)}^`;
+            },
+            pattern = new RegExp(
+                // Pattern for numbers
+                "\\d+(?:\\.\\d+)?|" 
+                // ...and patterns for individual operators/function names
+                + Object.values(this._symbols)
+                        // longer symbols should be listed first
+                        .sort( (a, b) => b.symbol.length - a.symbol.length ) 
+                        .map( val => val.regSymbol ).join('|')
+                + "|(\\S)", "g"
+            );
+        let afterValue = false;
+        pattern.lastIndex = 0; // Reset regular expression object
+        do {
+            match = pattern.exec(expression);
+            const [token, bad] = match || [")", undefined],
+                notNumber = this._symbols[token],
+                notNewValue = notNumber && !notNumber.prefix && !notNumber.func,
+                notAfterValue = !notNumber || !notNumber.postfix && !notNumber.infix;
+            // Check for syntax errors:
+            if (bad || (afterValue ? notAfterValue : notNewValue)) return error("Syntax error");
+            if (afterValue) {
+                // We either have an infix or postfix operator (they should be mutually exclusive)
+                const curr = notNumber.postfix || notNumber.infix;
+                do {
+                    const prev = operators[operators.length-1];
+                    if (((curr.precedence - prev.precedence) || prev.rightToLeft) > 0) break; 
+                    // Apply previous operator, since it has precedence over current one
+                } while (exec()); // Exit loop after executing an opening parenthesis or function
+                afterValue = curr.notation === "postfix";
+                if (curr.symbol !== ")") {
+                    operators.push(curr);
+                    // Postfix always has precedence over any operator that follows after it
+                    if (afterValue) exec();
+                }
+            } else if (notNumber) { // prefix operator or function
+                operators.push(notNumber.prefix || notNumber.func);
+                if (notNumber.func) { // Require an opening parenthesis
+                    match = pattern.exec(expression);
+                    if (!match || match[0] !== "(") return error("Function needs parentheses")
+                }
+            } else { // number
+                values.push(+token);
+                afterValue = true;
+            }
+        } while (match && operators.length);
+        return operators.length ? error("Missing closing parenthesis")
+                : match ? error("Too many closing parentheses")
+                : values.pop() // All done!
+    }
+}
+Calculation = new Calculation(); // Create a singleton
+
+function parse_str(targetString){
+    //Parses strings such as "3>=4". This could be solved with eval(), but eval is a weakness poitnt.
+    [a, b] = targetString.split("<=");
+    a = Calculation.calculate(a);
+    b = Calculation.calculate(b);
+    return(a <= b);
+}
