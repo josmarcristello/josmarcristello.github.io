@@ -42,7 +42,7 @@ Surjith S M / @surjithctly
     <![endif]-->
 </head>
 
-<body class="home" data-scroll-animation="true" data-spy="scroll" data-target="#main-navbar">
+<body class="home" data-scroll-animation="true">
     <!--==========Preloader==========-->
     <div id="loading">
         <div id="loading-center">
@@ -70,7 +70,7 @@ Surjith S M / @surjithctly
                 </div>
                 <!--========== Collect the nav links, forms, and other content for toggling ==========-->
                 <div class="collapse navbar-collapse" id="main-navbar">
-                    <a href="#product-choose" class=" btn btn-warning pull-right hidden-sm hidden-xs">pre-order now</a>
+                    <a href="#product-choose" class=" btn btn-warning pull-right hidden-sm hidden-xs">BUY IT NOW</a>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#product">Product</a></li>
                         <li><a href="#features">Features</a></li>
@@ -105,9 +105,7 @@ Surjith S M / @surjithctly
             <div class="container">
                 <h2>The future of tech is here</h2>
                 <p>Holisticly incentivize revolutionary collaboration and idea sharing before cost effective users. Actual focused services before highly efficient human capital. </p>
-                <a href="https://vimeo.com/142705963" class="btn btn-primary btn-lg video">Play <img src="images/play-btn-icon.png" alt=""> Video</a>
-                <br>
-                <a href="#product-choose" class="btn btn-warning btn-lg visible-sm-inline-block visible-xs-inline-block">pre-order now</a>
+                <a href="#product-choose" class="btn btn-primary btn-lg">BUY WITH PAYPAL</a>
                 <div class="row apple-watch">
                     <img src="images/apple-watch.png" alt="" class="watch_img">
                 </div>
@@ -817,7 +815,7 @@ Surjith S M / @surjithctly
     <!--==========Contact==========-->
     <section class="row contact" id="contact">
         <!-- ================== GOOGLE MAP (Change data-lat & data-lon values) ====================== -->
-        <!-- TIP : To change the map style, Visit /js/plugins/google-map.js -->
+        <!-- TIP : More Customization / Color option available in /js/plugins/google-map.js -->
         <div id="mapBox" class="row m0" data-lat="37.3818288" data-lon="-122.0636325" data-zoom="15"></div>
         <!-- Flippable Contact Box -->
         <div class="flip-box-container row m0">
@@ -916,7 +914,8 @@ Surjith S M / @surjithctly
             </div>
         </div>
         <div class="product-desc">
-            <form action="php/pre-order.php" id="preorderform" class="choose-form row m0" method="get" data-redirect="none">
+            <!-- Testing Paypal? Change Paypal URL to https://www.sandbox.paypal.com/cgi-bin/webscr If you are testing -->
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="POST" target="_top" class="choose-form row m0" id="paypal-regn">
                 <div id="js-product-info" class="product-info">
                     <h4 class="name">Smart Watch</h4>
                     <h2 class="edition">Sports Edition</h2>
@@ -929,33 +928,33 @@ Surjith S M / @surjithctly
                         <div class="option">
                             <h4 class="form-label">Choose a color</h4>
                             <div class="row m0 colors">
-                                <input type="radio" name="color" value="Blue" id="color-1" checked>
+                                <input type="radio" name="os0" value="Blue" id="color-1" checked>
                                 <label for="color-1"></label>
-                                <input type="radio" name="color" value="Violet" id="color-2">
+                                <input type="radio" name="os0" value="Violet" id="color-2">
                                 <label for="color-2"></label>
-                                <input type="radio" name="color" value="Magenta" id="color-3">
+                                <input type="radio" name="os0" value="Magenta" id="color-3">
                                 <label for="color-3"></label>
-                                <input type="radio" name="color" value="Yellow" id="color-4">
+                                <input type="radio" name="os0" value="Yellow" id="color-4">
                                 <label for="color-4"></label>
-                                <input type="radio" name="color" value="Green" id="color-5">
+                                <input type="radio" name="os0" value="Green" id="color-5">
                                 <label for="color-5"></label>
                             </div>
                         </div>
                         <div class="option">
                             <h4 class="form-label">Qty</h4>
-                            <input type="text" value="1" name="Quantity" class="quanity">
+                            <input type="text" value="1" name="quantity" class="quanity">
                         </div>
                         <div class="option">
                             <h4 class="form-label">Size</h4>
-                            <select class="selectpicker">
-                                <option value="m" selected>M</option>
-                                <option value="l">L</option>
-                                <option value="xl">XL</option>
+                            <select class="selectpicker" name="os1">
+                                <option value="M" selected>M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
                             </select>
                         </div>
                     </div>
                     <div class="submit-area row m0">
-                        <a href="javascript:void(0);" class="btn btn-rounded btn-block" id="next-personal">pre-order now</a>
+                        <a href="javascript:void(0);" class="btn btn-rounded btn-block" id="next-personal">Checkout</a>
                     </div>
                 </div>
                 <!-- // End Product Info -->
@@ -963,27 +962,27 @@ Surjith S M / @surjithctly
                     <div class="form-group text-center"><a href="javascript:void(0);" class="btn" id="prev-product-info">Go Back</a></div>
                     <div class="row">
                         <div class="form-group col-sm-6">
-                            <input type="text" name="First_Name" class="form-control" placeholder="First Name" required>
+                            <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
                         </div>
                         <div class="form-group col-sm-6">
-                            <input type="text" name="Last_Name" class="form-control" placeholder="Last Name" required>
+                            <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="Email" class="form-control" placeholder="Email Address" required>
+                        <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Address_Line_1" class="form-control" placeholder="Address Line 1" required>
+                        <input type="text" name="address1" class="form-control" placeholder="Address Line 1" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Address_Line_2" class="form-control" placeholder="Address Line 2" required>
+                        <input type="text" name="address2" class="form-control" placeholder="Address Line 2" required>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-6">
-                            <input type="text" name="State" class="form-control" placeholder="State" required>
+                            <input type="text" name="state" class="form-control" placeholder="State" required>
                         </div>
                         <div class="form-group col-sm-6">
-                            <input type="text" name="Zip_Code" class="form-control" placeholder="Zip Code" required>
+                            <input type="text" name="zip" class="form-control" placeholder="Zip Code" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -995,8 +994,47 @@ Surjith S M / @surjithctly
                             <option value="India">India</option>
                         </select>
                     </div>
+                    <!-- 
+                            Paypal Hidden Fields
+                            ====================================== -->
+                    <!-- Customization Guide : http://bit.ly/papyal_dev_html_guide/ -->
+                    <!-- Paypal Form customization is not included in the Support Scope. Sorry. -->
+                    <!-- Change values inside value="" only -->
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <!-- Your Paypal email to receive funds -->
+                    <input type="hidden" name="business" value="surjithctly-facilitator@gmail.com">
+                    <input type="hidden" name="lc" value="IN">
+                    <!-- Product Name -->
+                    <input type="hidden" name="item_name" value="Smart Watch Sports Edition">
+                    <!-- Model Number -->
+                    <input type="hidden" name="item_number" value="AS1500">
+                    <!-- Price -->
+                    <input type="hidden" name="amount" value="299.00">
+                    <!-- Currency -->
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="button_subtype" value="services">
+                    <input type="hidden" name="no_note" value="0">
+                    <!-- TAX -->
+                    <input type="hidden" name="tax_rate" value="5.000">
+                    <!-- Shipping -->
+                    <input type="hidden" name="shipping" value="10.00">
+                    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                    <!-- Color Name -->
+                    <input type="hidden" name="on0" value="Color">
+                    <!-- Size Name -->
+                    <input type="hidden" name="on1" value="Size">
+                    <!-- Verify Paypal Payment - URL of PHP file. -->
+                    <!-- You have to give the Same URL also in Paypal => Profile => Selling Tools => IPN => Notfication URL -->
+                    <input type="hidden" name="notify_url" value="https://demo.web3canvas.com/themeforest/proland/php/verify-ipn.php">
+                    <!-- Payment Success Return page -->
+                    <input type="hidden" name="return" value="http://demo.web3canvas.com/themeforest/proland/success.html">
+                    <!-- Payment Cancel Return page -->
+                    <input type="hidden" name="cancel_return" value="http://demo.web3canvas.com/themeforest/proland/index_buy_paypal.html">
+                    <!-- ./ End Paypal Hidden Fields -->
                     <div class="submit-area-2 row m0">
-                        <button type="submit" class="btn btn-rounded js-preorder-btn btn-block"><span>Finish Purchase</span></button>
+                        <button type="submit" class="btn btn-rounded js-preorder-btn btn-block"><span>Pay with Paypal</span></button>
+                        <!-- Paypal Tracking Pixel. Do not remove -->
+                        <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                     </div>
                 </div>
                 <!-- // end #js-personal-info.personal-info -->
@@ -1023,8 +1061,6 @@ Surjith S M / @surjithctly
     <script src="js/includes/pre-order.js"></script>
     <script src="js/includes/subscribe.js"></script>
     <script src="js/includes/contact.js"></script>
-    <!-- Style Switcher -->
-    <script src="js/includes/style-switcher.js"></script>
     <!-- Main JS -->
     <script src="js/main.js"></script>
 </body>

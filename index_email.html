@@ -16,10 +16,13 @@ Surjith S M / @surjithctly
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!--========== Page Ttile ==========-->
     <title>ProLand - Product Landing Page Template</title>
+
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+
     <!-- CSS Plugin Files -->
     <link href="css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="css/plugins/font-awesome.min.css" rel="stylesheet">
@@ -29,20 +32,26 @@ Surjith S M / @surjithctly
     <link href="vendors/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="vendors/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
     <link href="css/plugins/animate.css" rel="stylesheet">
+
     <!-- Preloader -->
     <link href="css/plugins/preloader.css" rel="stylesheet">
+
     <!--========== Main Styles==========-->
     <link href="css/style.css" rel="stylesheet">
+
     <!-- Theme CSS (For Available Color Options, See Documentation ) -->
     <link href="css/themes/blue-orange.css" rel="stylesheet">
+
     <!--========== HTML5 shim and Respond.js (Required) ==========-->
     <!--[if lt IE 9]>
     <script src="js/lib/html5shiv.min.js"></script>
     <script src="js/lib/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
-<body class="home" data-scroll-animation="true" data-spy="scroll" data-target="#main-navbar">
+<body class="home" data-scroll-animation="true">
+
     <!--==========Preloader==========-->
     <div id="loading">
         <div id="loading-center">
@@ -54,6 +63,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </div>
+
     <!--==========Header==========-->
     <header class="row" id="header">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -68,9 +78,10 @@ Surjith S M / @surjithctly
                         <span class="icon-bar"></span>
                     </button>
                 </div>
+
                 <!--========== Collect the nav links, forms, and other content for toggling ==========-->
                 <div class="collapse navbar-collapse" id="main-navbar">
-                    <a href="#product-choose" class=" btn btn-warning pull-right hidden-sm hidden-xs">pre-order now</a>
+                    <a href="#header" class=" btn btn-warning pull-right hidden-sm hidden-xs">Notify Me</a>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#product">Product</a></li>
                         <li><a href="#features">Features</a></li>
@@ -101,19 +112,36 @@ Surjith S M / @surjithctly
             </div>
             <!--========== /.container-fluid ==========-->
         </nav>
+
         <div class="top-banner row m0 text-center fadeInOnLoad">
             <div class="container">
                 <h2>The future of tech is here</h2>
                 <p>Holisticly incentivize revolutionary collaboration and idea sharing before cost effective users. Actual focused services before highly efficient human capital. </p>
-                <a href="https://vimeo.com/142705963" class="btn btn-primary btn-lg video">Play <img src="images/play-btn-icon.png" alt=""> Video</a>
-                <br>
-                <a href="#product-choose" class="btn btn-warning btn-lg visible-sm-inline-block visible-xs-inline-block">pre-order now</a>
+
+                <!--========== Notify Me ==========-->
+                <form action="php/subscribe.php" id="subscribeform" class="row newsletter-form mb-lg" method="post">
+                    <div class="input-group">
+                        <input type="email" class="form-control alt" name="email" placeholder="Enter Your Email Address">
+                        <span class="input-group-addon">
+                    <button type="submit" id="js-subscribe-btn"><img src="images/right-angle-white.png" alt=""></button>
+                </span>
+                    </div>
+                    <div id="js-subscribe-result" class="text-center" data-success-msg="Almost finished. Please check your email and verify." data-error-msg="Oops. Something went wrong.">
+                        <p>
+                            &nbsp;
+                        </p>
+                    </div>
+
+                </form>
+                <!-- // End Mailchimp Form -->
+
                 <div class="row apple-watch">
                     <img src="images/apple-watch.png" alt="" class="watch_img">
                 </div>
             </div>
         </div>
     </header>
+
     <!--==========The Product==========-->
     <section class="row the-product" id="product">
         <div class="container">
@@ -121,8 +149,10 @@ Surjith S M / @surjithctly
                 <h2>the product</h2>
                 <p>Introduce the product here. A small description about what it is and how it helps the user. You can also add some photos below.</p>
             </div>
+
             <div class="row apple-watch-note-feature text-center">
                 <img src="images/apple-watch-2.png" alt="">
+
                 <!--==========Feature Noted top right==========-->
                 <div class="feature-note right top wow fadeInRight">
                     <div class="indicator">
@@ -170,6 +200,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========How its Works==========-->
     <section class="row how-it-works">
         <div class="container">
@@ -205,6 +236,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========The Benefits==========-->
     <section class="row the-benefits" id="features">
         <div class="container">
@@ -288,6 +320,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========Left Right Content==========-->
     <section class="row left-right-contents">
         <div class="container">
@@ -356,6 +389,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========Our Collection==========-->
     <section class="row our-collection">
         <div class="container">
@@ -407,6 +441,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========The Watch==========-->
     <section class="row the-watch">
         <div class="container">
@@ -429,6 +464,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========Split Columns==========-->
     <section class="row split-columns">
         <div class="row m0 split-column wow fadeIn">
@@ -454,6 +490,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========Reviews==========-->
     <section class="row reviews" id="reviews">
         <div class="container">
@@ -483,6 +520,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========Featured On==========-->
     <section class="row  featured-on">
         <div class="container">
@@ -499,6 +537,7 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
     <!--==========FAQS==========-->
     <section class="row faqs">
         <div class="container">
@@ -530,6 +569,174 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
+
+    <!--==========Team==========-->
+    <section class="row team">
+        <div class="container">
+            <div class="row section-header wow fadeInUp">
+                <h2>meet the team</h2>
+                <p>We are a small group of inverntors, hackers and designers from the differrent parts of the world on a mission.</p>
+            </div>
+            <div class="row team_members">
+                <!--==========Member==========-->
+                <div class="col-md-3 col-sm-6 member wow fadeInUp">
+                    <div class="row m0 inner">
+                        <div class="row m0 image">
+                            <img src="images/team-1.jpg" alt="">
+                        </div>
+                        <div class="texts row m0">
+                            <h4>Gary Elliott</h4>
+                            <h5>Co-Founder and CEO</h5>
+                        </div>
+                    </div>
+                </div>
+                <!--==========Member==========-->
+                <div class="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="row m0 inner">
+                        <div class="row m0 image">
+                            <img src="images/team-2.jpg" alt="">
+                        </div>
+                        <div class="texts row m0">
+                            <h4>Jeffrey Allen</h4>
+                            <h5>Co-Founder and CTO</h5>
+                        </div>
+                    </div>
+                </div>
+                <!--==========Member==========-->
+                <div class="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="row m0 inner">
+                        <div class="row m0 image">
+                            <img src="images/team-3.jpg" alt="">
+                        </div>
+                        <div class="texts row m0">
+                            <h4>Sara Mendez</h4>
+                            <h5>Lead Developer, Hacker</h5>
+                        </div>
+                    </div>
+                </div>
+                <!--==========Member==========-->
+                <div class="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="row m0 inner">
+                        <div class="row m0 image">
+                            <img src="images/team-4.jpg" alt="">
+                        </div>
+                        <div class="texts row m0">
+                            <h4>Albert Castro</h4>
+                            <h5>3D Designer &amp; Prototyper</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==========Timeline==========-->
+    <section class="row timeline">
+        <div class="container">
+            <div class="row section-header wow fadeInUp">
+                <h2>timeline</h2>
+                <p>Here’s a roadmap of our product to highlight the milestones from the initial phase to delivery and future updates.</p>
+            </div>
+            <div class="row timeline-row">
+                <div class="row m0 timeline-post">
+                    <div class="bar-content">
+                        <div class="inner">now</div>
+                    </div>
+                </div>
+                <div class="row m0 timeline-post has-content wow fadeInUp">
+                    <div class="col-sm-6 half-side date">
+                        23 jan 2014
+                    </div>
+                    <div class="col-sm-6 half-side content">
+                        <div class="inner">
+                            <h4 class="title">Mass Production</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m0 timeline-post has-content odd wow fadeInUp">
+                    <div class="col-sm-6 half-side date">
+                        23 jan 2014
+                    </div>
+                    <div class="col-sm-6 half-side content">
+                        <div class="inner">
+                            <h4 class="title">Testing Pre-Production Samples</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m0 timeline-post has-content wow fadeInUp">
+                    <div class="col-sm-6 half-side date">
+                        23 jan 2014
+                    </div>
+                    <div class="col-sm-6 half-side content">
+                        <div class="inner">
+                            <h4 class="title">Croudfunding Campaign</h4>
+                            <p>And an optional description. You may add little description of your milestone if you want.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m0 timeline-post has-content odd wow fadeInUp">
+                    <div class="col-sm-6 half-side date">
+                        23 jan 2014
+                    </div>
+                    <div class="col-sm-6 half-side content">
+                        <div class="inner">
+                            <h4 class="title">Preview at CES</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m0 timeline-post wow fadeInUp">
+                    <div class="bar-content">
+                        <div class="inner">2015</div>
+                    </div>
+                </div>
+                <div class="row m0 timeline-post has-content wow fadeInUp">
+                    <div class="col-sm-6 half-side date">
+                        23 jan 2014
+                    </div>
+                    <div class="col-sm-6 half-side content">
+                        <div class="inner">
+                            <h4 class="title">3D Prototype &amp; Testing</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m0 timeline-post has-content odd wow fadeInUp">
+                    <div class="col-sm-6 half-side date">
+                        23 jan 2014
+                    </div>
+                    <div class="col-sm-6 half-side content">
+                        <div class="inner">
+                            <h4 class="title">Research and Development</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m0 timeline-post">
+                    <div class="bar-content">
+                        <div class="inner">idea</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==========Mobile App==========-->
+    <section class="row mobile-app">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-push-6 wow fadeIn">
+                    <h2>Mobile App for watch</h2>
+                    <p>The smartwatch connects to your iPhone and other iOS devices using Bluetooth, alerting you to incoming calls, emails, messages and alerts. Customize your with over 1,000 watchapps found within the smartwatch app.</p>
+                    <div class="row m0 downloads-btns">
+                        <a href="#" class="dload-link"><img src="images/app-store.png" alt=""></a>
+                        <a href="#" class="dload-link"><img src="images/google-play.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-sm-pull-6 wow fadeInUp">
+                    <img src="images/app-screen.png" alt="" class="mobile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!--==========Tech Specs==========-->
     <section class="row tech-specs">
         <div class="container">
@@ -628,196 +835,13 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </section>
-    <!--==========Team==========-->
-    <section class="row team">
-        <div class="container">
-            <div class="row section-header wow fadeInUp">
-                <h2>meet the team</h2>
-                <p>We are a small group of inverntors, hackers and designers from the differrent parts of the world on a mission.</p>
-            </div>
-            <div class="row team_members">
-                <!--==========Member==========-->
-                <div class="col-md-3 col-sm-6 member wow fadeInUp">
-                    <div class="row m0 inner">
-                        <div class="row m0 image">
-                            <img src="images/team-1.jpg" alt="">
-                        </div>
-                        <div class="texts row m0">
-                            <h4>Gary Elliott</h4>
-                            <h5>Co-Founder and CEO</h5>
-                        </div>
-                    </div>
-                </div>
-                <!--==========Member==========-->
-                <div class="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="row m0 inner">
-                        <div class="row m0 image">
-                            <img src="images/team-2.jpg" alt="">
-                        </div>
-                        <div class="texts row m0">
-                            <h4>Jeffrey Allen</h4>
-                            <h5>Co-Founder and CTO</h5>
-                        </div>
-                    </div>
-                </div>
-                <!--==========Member==========-->
-                <div class="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="row m0 inner">
-                        <div class="row m0 image">
-                            <img src="images/team-3.jpg" alt="">
-                        </div>
-                        <div class="texts row m0">
-                            <h4>Sara Mendez</h4>
-                            <h5>Lead Developer, Hacker</h5>
-                        </div>
-                    </div>
-                </div>
-                <!--==========Member==========-->
-                <div class="col-md-3 col-sm-6 member wow fadeInUp" data-wow-delay="0.9s">
-                    <div class="row m0 inner">
-                        <div class="row m0 image">
-                            <img src="images/team-4.jpg" alt="">
-                        </div>
-                        <div class="texts row m0">
-                            <h4>Albert Castro</h4>
-                            <h5>3D Designer &amp; Prototyper</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--==========Timeline==========-->
-    <section class="row timeline">
-        <div class="container">
-            <div class="row section-header wow fadeInUp">
-                <h2>timeline</h2>
-                <p>Here’s a roadmap of our product to highlight the milestones from the initial phase to delivery and future updates.</p>
-            </div>
-            <div class="row timeline-row">
-                <div class="row m0 timeline-post">
-                    <div class="bar-content">
-                        <div class="inner">now</div>
-                    </div>
-                </div>
-                <div class="row m0 timeline-post has-content wow fadeInUp">
-                    <div class="col-sm-6 half-side date">
-                        23 jan 2014
-                    </div>
-                    <div class="col-sm-6 half-side content">
-                        <div class="inner">
-                            <h4 class="title">Mass Production</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row m0 timeline-post has-content odd wow fadeInUp">
-                    <div class="col-sm-6 half-side date">
-                        23 jan 2014
-                    </div>
-                    <div class="col-sm-6 half-side content">
-                        <div class="inner">
-                            <h4 class="title">Testing Pre-Production Samples</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row m0 timeline-post has-content wow fadeInUp">
-                    <div class="col-sm-6 half-side date">
-                        23 jan 2014
-                    </div>
-                    <div class="col-sm-6 half-side content">
-                        <div class="inner">
-                            <h4 class="title">Croudfunding Campaign</h4>
-                            <p>And an optional description. You may add little description of your milestone if you want.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row m0 timeline-post has-content odd wow fadeInUp">
-                    <div class="col-sm-6 half-side date">
-                        23 jan 2014
-                    </div>
-                    <div class="col-sm-6 half-side content">
-                        <div class="inner">
-                            <h4 class="title">Preview at CES</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row m0 timeline-post wow fadeInUp">
-                    <div class="bar-content">
-                        <div class="inner">2015</div>
-                    </div>
-                </div>
-                <div class="row m0 timeline-post has-content wow fadeInUp">
-                    <div class="col-sm-6 half-side date">
-                        23 jan 2014
-                    </div>
-                    <div class="col-sm-6 half-side content">
-                        <div class="inner">
-                            <h4 class="title">3D Prototype &amp; Testing</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row m0 timeline-post has-content odd wow fadeInUp">
-                    <div class="col-sm-6 half-side date">
-                        23 jan 2014
-                    </div>
-                    <div class="col-sm-6 half-side content">
-                        <div class="inner">
-                            <h4 class="title">Research and Development</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row m0 timeline-post">
-                    <div class="bar-content">
-                        <div class="inner">idea</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--==========Mobile App==========-->
-    <section class="row mobile-app">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-push-6 wow fadeIn">
-                    <h2>Mobile App for watch</h2>
-                    <p>The smartwatch connects to your iPhone and other iOS devices using Bluetooth, alerting you to incoming calls, emails, messages and alerts. Customize your with over 1,000 watchapps found within the smartwatch app.</p>
-                    <div class="row m0 downloads-btns">
-                        <a href="#" class="dload-link"><img src="images/app-store.png" alt=""></a>
-                        <a href="#" class="dload-link"><img src="images/google-play.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-sm-pull-6 wow fadeInUp">
-                    <img src="images/app-screen.png" alt="" class="mobile-img">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--==========Newsletter==========-->
-    <section class="row newsletter">
-        <div class="container">
-            <div class="row section-header wow fadeInUp">
-                <h2>newsletter</h2>
-                <p>Subscribe to our product newsletter to get notified when we launch the product or when we completed a milestone</p>
-            </div>
-            <form action="php/subscribe.php" id="subscribeform" class="row newsletter-form" method="post">
-                <div class="input-group">
-                    <input type="email" class="form-control" name="email" placeholder="Enter Your Email Address">
-                    <span class="input-group-addon">
-                    <button type="submit" id="js-subscribe-btn"><img src="images/right-angle-white.png" alt=""></button>
-                </span>
-                </div>
-                <div id="js-subscribe-result" class="text-center" data-success-msg="Almost finished. Please check your email and verify." data-error-msg="Oops. Something went wrong.">
-                    <p>
-                        <img src="images/protect.png" alt="">No Spam. We Promise. Unsubscribe anytime.
-                    </p>
-                </div>
-            </form>
-        </div>
-    </section>
+
     <!--==========Contact==========-->
     <section class="row contact" id="contact">
+
         <!-- ================== GOOGLE MAP (Change data-lat & data-lon values) ====================== -->
-        <!-- TIP : To change the map style, Visit /js/plugins/google-map.js -->
+        <!-- TIP : More Customization / Color option available in /js/plugins/google-map.js -->
+
         <div id="mapBox" class="row m0" data-lat="37.3818288" data-lon="-122.0636325" data-zoom="15"></div>
         <!-- Flippable Contact Box -->
         <div class="flip-box-container row m0">
@@ -850,6 +874,7 @@ Surjith S M / @surjithctly
                         <div class="form-group">
                             <input type="text" name="subject" class="form-control" placeholder="Subject" required>
                         </div>
+
                         <div class="form-group">
                             <textarea class="form-control" name="message" placeholder="Message" required></textarea>
                         </div>
@@ -857,12 +882,14 @@ Surjith S M / @surjithctly
                         <div id="js-contact-result" data-success-msg="Form submitted successfully." data-error-msg="Oops. Something went wrong."></div>
                     </form>
                     <!-- // End Contact form -->
+
                 </div>
                 <!-- // End back Side -->
             </div>
         </div>
         <!-- // End Contact Box -->
     </section>
+
     <!--==========Footer==========-->
     <footer class="row">
         <div class="container">
@@ -889,126 +916,15 @@ Surjith S M / @surjithctly
             </div>
         </div>
     </footer>
-    <!-- ============================================================
-                            PRODUCT POPUP
-         ============================================================ -->
-    <div class="row product-box mfp-hide" id="product-choose">
-        <button class="mfp-close custom_close" title="Close (Esc)" type="button">&#215;</button>
-        <div class="product-img-gallery">
-            <div id="product-imgs" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#product-imgs" data-slide-to="0" class="active"></li>
-                    <li data-target="#product-imgs" data-slide-to="1"></li>
-                    <li data-target="#product-imgs" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="images/the-watch-1.png" alt="watch-1">
-                    </div>
-                    <div class="item">
-                        <img src="images/the-watch-2.png" alt="watch-2">
-                    </div>
-                    <div class="item">
-                        <img src="images/the-watch-3.png" alt="watch-3">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-desc">
-            <form action="php/pre-order.php" id="preorderform" class="choose-form row m0" method="get" data-redirect="none">
-                <div id="js-product-info" class="product-info">
-                    <h4 class="name">Smart Watch</h4>
-                    <h2 class="edition">Sports Edition</h2>
-                    <h5 class="model">MODEL AS1500</h5>
-                    <h2 class="price"><del>$349</del>$299 <span class="label label-default">early bird offer</span></h2>
-                    <div class="row m0 description">
-                        <p>8mm Silver Aluminum Case with Blue Sport Band. Its perfect fit for tracking fitness. 100% waterproof. Buy this limted edition sports edition.</p>
-                    </div>
-                    <div class="choose-options row m0" id="js-choose-color">
-                        <div class="option">
-                            <h4 class="form-label">Choose a color</h4>
-                            <div class="row m0 colors">
-                                <input type="radio" name="color" value="Blue" id="color-1" checked>
-                                <label for="color-1"></label>
-                                <input type="radio" name="color" value="Violet" id="color-2">
-                                <label for="color-2"></label>
-                                <input type="radio" name="color" value="Magenta" id="color-3">
-                                <label for="color-3"></label>
-                                <input type="radio" name="color" value="Yellow" id="color-4">
-                                <label for="color-4"></label>
-                                <input type="radio" name="color" value="Green" id="color-5">
-                                <label for="color-5"></label>
-                            </div>
-                        </div>
-                        <div class="option">
-                            <h4 class="form-label">Qty</h4>
-                            <input type="text" value="1" name="Quantity" class="quanity">
-                        </div>
-                        <div class="option">
-                            <h4 class="form-label">Size</h4>
-                            <select class="selectpicker">
-                                <option value="m" selected>M</option>
-                                <option value="l">L</option>
-                                <option value="xl">XL</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="submit-area row m0">
-                        <a href="javascript:void(0);" class="btn btn-rounded btn-block" id="next-personal">pre-order now</a>
-                    </div>
-                </div>
-                <!-- // End Product Info -->
-                <div class="personal-info" id="js-personal-info">
-                    <div class="form-group text-center"><a href="javascript:void(0);" class="btn" id="prev-product-info">Go Back</a></div>
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <input type="text" name="First_Name" class="form-control" placeholder="First Name" required>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input type="text" name="Last_Name" class="form-control" placeholder="Last Name" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="Email" class="form-control" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="Address_Line_1" class="form-control" placeholder="Address Line 1" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="Address_Line_2" class="form-control" placeholder="Address Line 2" required>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <input type="text" name="State" class="form-control" placeholder="State" required>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input type="text" name="Zip_Code" class="form-control" placeholder="Zip Code" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" name="Country" required>
-                            <option selected value="">Choose a country</option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Australia">Australia</option>
-                            <option value="India">India</option>
-                        </select>
-                    </div>
-                    <div class="submit-area-2 row m0">
-                        <button type="submit" class="btn btn-rounded js-preorder-btn btn-block"><span>Finish Purchase</span></button>
-                    </div>
-                </div>
-                <!-- // end #js-personal-info.personal-info -->
-            </form>
-        </div>
-    </div>
-    <!-- // End Product Popup Section -->
+
     <!--========== Javascript Files ==========-->
+
     <!-- jQuery Latest -->
     <script src="js/lib/jquery-2.2.0.min.js"></script>
+
     <!-- Bootstrap JS -->
     <script src="js/lib/bootstrap.min.js"></script>
+
     <!-- Plugins -->
     <script src="vendors/owl-carousel/owl.carousel.js"></script>
     <script src="vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
@@ -1023,8 +939,7 @@ Surjith S M / @surjithctly
     <script src="js/includes/pre-order.js"></script>
     <script src="js/includes/subscribe.js"></script>
     <script src="js/includes/contact.js"></script>
-    <!-- Style Switcher -->
-    <script src="js/includes/style-switcher.js"></script>
+
     <!-- Main JS -->
     <script src="js/main.js"></script>
 </body>
