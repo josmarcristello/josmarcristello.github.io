@@ -912,15 +912,6 @@ textarea.form-control {
   }
 }
 
-header.row {
-  background: url(../images/header-background.jpg) no-repeat scroll center bottom;
-  background-size: cover;
-}
-
-header.alt-bg {
-  background: url(../images/header_bg_alt.jpg) no-repeat center center;
-  background-size: cover;
-}
 
 header.video-bg {
   background: #010102;
@@ -1377,7 +1368,7 @@ header.video-bg {
 
 .feature-note.right.top {
   top: 10px;
-  right: 220px;
+  right: 570px;
 }
 
 @media (max-width: 1199px) {
@@ -1417,8 +1408,8 @@ header.video-bg {
 }
 
 .feature-note.right.bottom {
-  top: 290px;
-  right: 221px;
+  top: 205px;
+  right: 130px;
 }
 
 @media (max-width: 1199px) {
@@ -1514,8 +1505,8 @@ header.video-bg {
 }
 
 .feature-note.left.top {
-  top: 115px;
-  left: 205px;
+  top: 120px;
+  left: 290px;
 }
 
 @media (max-width: 1199px) {
@@ -1533,7 +1524,7 @@ header.video-bg {
 @media (max-width: 767px) {
   .feature-note.left.top {
     left: -110px;
-    top: 20px;
+    top: 020px;
   }
 }
 
@@ -1561,8 +1552,8 @@ header.video-bg {
 }
 
 .feature-note.left.bottom {
-  top: 395px;
-  left: 122px;
+  top: 280px;
+  left: 380px;
   height: auto;
 }
 

@@ -104,7 +104,7 @@ $(function() {
                     $("#js-contact-btn").attr("disabled", false);
                 },
                 error: function(d) {
-                    $("#js-contact-btn").text('Cannot access Server');
+                    $("#js-contact-btn").text('Just kidding, don't contact us');
                     $("#js-contact-btn").attr("disabled", false);
                     setTimeout(function() {
                         $("#js-contact-btn").text('Send Message');
